@@ -1,6 +1,69 @@
 <!DOCTYPE html>
     <html>
-        <p>
-            <img src="R/paper.jpg" alt="failed to load image">
-        </p>
+        <head>
+            <style>
+                body {
+                    background-image: url("R/paper.jpg");
+                    text-align: center;
+                    font-family: sans-serif;
+                    #guitarBody {
+                        width: 500px;
+                        margin: 200px 400px;
+                        display: block;
+                    }
+                }
+            </style>
+        </head>
+            <body>
+                <h1>
+                    Guitar Builder
+                </h1>
+
+                <label for="body">Body</label>
+                <select id="body">
+                    <option value="1">Stratocaster</option>
+                    <option value="2">Telecaster</option>
+                    <option value="3">SG</option>
+                    <option value="4">Les Paul</option>
+                </select>
+
+                <label for="neck">Neck</label>
+                <select id="neck">
+                    <option value="1">Stratocaster</option>
+                    <option value="2">Telecaster</option>
+                    <option value="3">SG</option>
+                    <option value="4">Les Paul</option>  
+                </select>
+
+                <label for="head">Head</label>
+                <select id="head">
+                    <option value="1">Stratocaster</option>
+                    <option value="2">Telecaster</option>
+                    <option value="3">SG</option>
+                    <option value="4">Les Paul</option>  
+                </select>
+
+                <img id= "guitarBody" src="R/stratburstbody.png">
+
+                <script>
+                    const bodyDropdown = document.getElementById("body");
+                    bodyDropdown.addEventListener("change", function() {
+                        console.log(bodyDropdown.value);
+
+                    if (bodyDropdown.value === "1") 
+                        guitarBody.src = "R/stratburstbody.png";
+                    
+                    if (bodyDropdown.value === "2") 
+                        guitarBody.src = "R/telecasternaturalbody.png";
+
+                    if (bodyDropdown.value === "3")
+                        guitarBody.src = "R/sgblackbody.png";
+
+                    if (bodyDropdown.value === "4")
+                        guitarBody.src = "R/lespaulbody.png";
+                    
+                    });
+
+                </script>
+            </body>
     </html>
