@@ -6,10 +6,24 @@
                     background-image: url("R/paper.jpg");
                     text-align: center;
                     font-family: sans-serif;
+                    
                     #guitarBody {
-                        width: 500px;
-                        margin: 200px 400px;
-                        display: block;
+                        position:absolute;
+                        left: 400px;
+                        top: 200px;
+                        width: 1000px;
+                    }
+                    #guitarNeck {
+                        position: absolute;
+                        left: 352px;
+                        top: 178px;
+                        width: 1139px;
+                    }
+                    #guitarHead {
+                        position: absolute;
+                        left: 425px;
+                        top: 194px;
+                        width: 1045px;
                     }
                 }
             </style>
@@ -24,7 +38,6 @@
                     <option value="1">Stratocaster</option>
                     <option value="2">Telecaster</option>
                     <option value="3">SG</option>
-                    <option value="4">Les Paul</option>
                 </select>
 
                 <label for="neck">Neck</label>
@@ -32,18 +45,18 @@
                     <option value="1">Stratocaster</option>
                     <option value="2">Telecaster</option>
                     <option value="3">SG</option>
-                    <option value="4">Les Paul</option>  
                 </select>
 
                 <label for="head">Head</label>
                 <select id="head">
                     <option value="1">Stratocaster</option>
                     <option value="2">Telecaster</option>
-                    <option value="3">SG</option>
-                    <option value="4">Les Paul</option>  
+                    <option value="3">SG</option> 
                 </select>
 
-                <img id= "guitarBody" src="R/stratburstbody.png">
+                <img id="guitarBody" src="R/stratburstbody.png">
+                <img id="guitarNeck" src="R/stratburstneck.png">
+                <img id="guitarHead" src="R/stratbursthead.png">
 
                 <script>
                     const bodyDropdown = document.getElementById("body");
@@ -59,11 +72,33 @@
                     if (bodyDropdown.value === "3")
                         guitarBody.src = "R/sgblackbody.png";
 
-                    if (bodyDropdown.value === "4")
-                        guitarBody.src = "R/lespaulbody.png";
-                    
                     });
 
+                    const neckDropdown = document.getElementById("neck");
+                    neckDropdown.addEventListener("change", function() {
+
+                    if (neckDropdown.value === "1")
+                        guitarNeck.src = "R/stratburstneck.png";
+
+                    if (neckDropdown.value === "2")
+                        guitarNeck.src = "R/telecasternaturalneck.png";
+
+                    if (neckDropdown.value === "3")
+                        guitarNeck.src = "R/sgblackneck.png";
+                    });
+
+                    const headDropdown = document.getElementById("head");
+                    headDropdown.addEventListener("change", function() {
+                      
+                    if (headDropdown.value === "1")
+                        guitarHead.src = "R/stratbursthead.png";
+
+                    if (headDropdown.value === "2")
+                        guitarHead.src = "R/telecasternaturalhead.png";
+
+                    if (headDropdown.value === "3")
+                        guitarHead.src = "R/sgblackhead.png"
+                    });
                 </script>
             </body>
     </html>
